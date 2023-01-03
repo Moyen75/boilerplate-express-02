@@ -4,7 +4,7 @@ app.use(express.json())
 
 app.get("/json", (req, res) => {
     const json = {
-        "message": 
+        message: 
          "Hello json"
     }
     res.send(json);
