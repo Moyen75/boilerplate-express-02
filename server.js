@@ -7,7 +7,12 @@ var bGround = require('fcc-express-bground');
 var myApp = require('./myApp');
 var express = require('express');
 var app = express();
-app.set('json spaces', 1);
+app.set("json spaces", 1)
+app.use((req,res,next)=>{
+  const str = req.method + " "+ req.path + " - " + req.ip
+  console.log(str);
+  next();
+})
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function (req, res, next) {
