@@ -3,9 +3,10 @@ let app = express();
 app.use(express.json())
 
 app.get("/json", (req, res) => {
-    res.json({
-        message: "Hello json"
-    });
+    const json = {
+        "message": "Hello json"
+    }
+    res.json(json);
 });
 
 
